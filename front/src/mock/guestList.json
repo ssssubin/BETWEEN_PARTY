@@ -1,0 +1,59 @@
+{
+    "guestData":[{
+        "tableNum": 1,
+        "members":[
+            { "id": 1, "nickname": "신림_지드래곤", "gender": "male" },
+            { "id": 2, "nickname": "성수_카라멜라떼", "gender": "male" },
+            { "id": 3, "nickname": "홍대_야간비행", "gender": "male" },
+            { "id": 4, "nickname": "강남_월스트리트", "gender": "male" },
+            { "id": 5, "nickname": "연남_드로잉", "gender": "male" },
+            { "id": 21, "nickname": "성수_플라워숍", "gender": "female" },
+            { "id": 22, "nickname": "연남_아인슈페너", "gender": "female" },
+            { "id": 23, "nickname": "한남_갤러리스트", "gender": "female" },
+            { "id": 24, "nickname": "망원_소품샵덕후", "gender": "female" },
+            { "id": 25, "nickname": "청담_스타일리스트", "gender": "female" }
+        ]
+    },{
+        "tableNum": 2,
+        "members":[
+            { "id": 6, "nickname": "건대_새벽감성", "gender": "male" },
+            { "id": 7, "nickname": "망원_티라미수", "gender": "male" },
+            { "id": 8, "nickname": "이태원_DJ파티", "gender": "male" },
+            { "id": 9, "nickname": "혜화_연극배우", "gender": "male" },
+            { "id": 10, "nickname": "잠실_베이스볼", "gender": "male" },
+            { "id": 26, "nickname": "광화문_직장인A", "gender": "female" },
+            { "id": 27, "nickname": "익선_한옥카페", "gender": "female" },
+            { "id": 28, "nickname": "을지로_레트로", "gender": "female" },
+            { "id": 29, "nickname": "서촌_에세이스트", "gender": "female" },
+            { "id": 30, "nickname": "잠실_러닝크루", "gender": "female" }
+        ]
+    },{
+        "tableNum": 3,
+        "members":[
+            { "id": 11, "nickname": "여의도_금융맨", "gender": "male" },
+            { "id": 12, "nickname": "판교_개발소년", "gender": "male" },
+            { "id": 13, "nickname": "부산_바다사나이", "gender": "male" },
+            { "id": 14, "nickname": "대구_핫플마스터", "gender": "male" },
+            { "id": 15, "nickname": "송도_시티라이프", "gender": "male" },
+            { "id": 31, "nickname": "송리단길_디저트", "gender": "female" },
+            { "id": 32, "nickname": "강남_필라테스", "gender": "female" },
+            { "id": 33, "nickname": "홍대_버스킹요정", "gender": "female" },
+            { "id": 34, "nickname": "판교_기획자P", "gender": "female" },
+            { "id": 35, "nickname": "부산_해운대자일로", "gender": "female" }
+        ]
+    },{
+        "tableNum": 4,
+        "members":[
+            { "id": 16, "nickname": "수원_갈비마왕", "gender": "male" },
+            { "id": 17, "nickname": "광교_호수산책", "gender": "male" },
+            { "id": 18, "nickname": "안암_열공모드", "gender": "male" },
+            { "id": 19, "nickname": "신촌_밴드부장", "gender": "male" },
+            { "id": 20, "nickname": "압구정_오렌지", "gender": "male" },
+            { "id": 36, "nickname": "제주_귤밭주인", "gender": "female" },
+            { "id": 37, "nickname": "전주_한복나들이", "gender": "female" },
+            { "id": 38, "nickname": "분당_홈카페", "gender": "female" },
+            { "id": 39, "nickname": "일산_호수공원", "gender": "female" },
+            { "id": 40, "nickname": "인천_노을수집가", "gender": "female" }
+        ]
+    }]
+}
