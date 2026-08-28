@@ -1,0 +1,38 @@
+.item {
+  width: 100%;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: 100%;
+  padding: 16px 0;
+
+  border: none;
+  background: transparent;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 14px;
+  font-size: 12px;
+}
+
+.content {
+  padding: 0 16px 16px 22px;
+
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+
+  text-align: left;
+}
