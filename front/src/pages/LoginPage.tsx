@@ -71,6 +71,7 @@ export default function LoginPage() {
               <input
                 id="tableNum"
                 className="input"
+                type="number"
                 inputMode="numeric"
                 placeholder="1"
                 maxLength={2}
