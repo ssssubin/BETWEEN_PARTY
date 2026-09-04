@@ -6,9 +6,9 @@ import CustomAlert from "../components/CustomAlert";
 export default function LoginPage() {
   const [form, setForm] = useState({
     gender: "", // 성별
-    nickname: "", // 닉네임
-    age: "", // 나이
-    tableNum: 0, // 테이블 번호
+    name: "", // 닉네임
+    phoneNumber: "", // 전화번호
+    isCheck: false, // 개인 정보 수집 동의 여부
     isAdmin: false, // 호스트 여부
   });
 
@@ -20,7 +20,26 @@ export default function LoginPage() {
     }));
   };
 
-  const isValid = form.gender && form.nickname && form.age && form.tableNum;
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "");
+
+    let formattedValue = value;
+
+    if (value.length <= 3) {
+      formattedValue = value;
+    } else if (value.length <= 7) {
+      formattedValue = `${value.slice(0, 3)}-${value.slice(3)}`;
+    } else {
+      formattedValue = `${value.slice(0, 3)}-${value.slice(3, 7)}-${value.slice(7, 11)}`;
+    }
+
+    setForm((prev) => ({
+      ...prev,
+      phoneNumber: formattedValue,
+    }));
+  }
+  const isValidPhoneNumber = /^010-\d{4}-\d{4}$/.test(form.phoneNumber);
+  const isValid = !!form.gender && !!form.name && isValidPhoneNumber && form.isCheck;
 
   return (
     <>
@@ -28,7 +47,7 @@ export default function LoginPage() {
         className="mobile-frame"
         style={{
           backgroundImage: `
-          linear-gradient(rgba(255,120,0,.45), rgba(0,0,0,.45)),
+          linear-gradient(rgba(255,120,0,.45), rgba(52, 21, 21, 0.45)),
           url(${background})
         `,
         }}
@@ -54,42 +73,51 @@ export default function LoginPage() {
 
               <p className="input-guide">성별을 선택해주세요.</p>
 
-              <label htmlFor="nickname">닉네임</label>
+              <label htmlFor="name">예약자명</label>
 
-              <input id="nickname" className="input" placeholder="예시: 신림_지드래곤" maxLength={15} value={form.nickname} onChange={handleChange} />
+              <input id="name" className="input" placeholder="" maxLength={15} value={form.name} onChange={handleChange} />
 
-              <p className="input-guide">"지역_연예인 이름"으로 작성해주세요.</p>
+              <p className="input-guide">"예약자명"으로 작성해주세요.</p>
 
-              <label htmlFor="age">나이</label>
-
-              <input id="age" className="input" placeholder="예시: 20세 or 07년생" maxLength={4} value={form.age} onChange={handleChange} />
-
-              <p className="input-guide">나이를 입력해주세요.</p>
-
-              <label htmlFor="tableNum">테이블 번호</label>
+              <label htmlFor="phoneNumber">전화번호</label>
 
               <input
-                id="tableNum"
+                id="phoneNumber"
                 className="input"
-                type="number"
+                type="tel"
                 inputMode="numeric"
-                placeholder="1"
-                maxLength={2}
-                value={form.tableNum}
-                onChange={handleChange}
+                placeholder="010-1234-5678"
+                maxLength={13}
+                value={form.phoneNumber}
+                onChange={handlePhoneChange}
               />
 
-              <p className="input-guide">본인이 앉은 테이블 번호를 입력해주세요.</p>
+              <p className="input-guide">전화번호를 입력해주세요.</p>
             </div>
 
+            <label className="check-group">
+                <input
+                type="checkbox"
+                id="isCheck"
+                checked={form.isCheck}
+                onChange={(e) =>
+                    setForm((prev) => ({
+                    ...prev,
+                    isCheck: e.target.checked,
+                    }))
+                }
+                />
+                <span>개인 정보 수집에 동의합니다.</span>
+            </label>
+
             <button className="enter-btn" disabled={!isValid} onClick={() => setAlertOpen(true)}>
-              입장하기🤍
+              로그인
             </button>
           </div>
         </div>
       </div>
 
-      <CustomAlert open={alertOpen} title="BETWEEN PARTY" message="입장이 완료되었습니다." onClose={() => setAlertOpen(false)} />
+      <CustomAlert open={alertOpen} title="BETWEEN PARTY" message="BETWEEN PARTY에 오신 걸 환영합니다🥳" onClose={() => setAlertOpen(false)} />
     </>
   );
 }
