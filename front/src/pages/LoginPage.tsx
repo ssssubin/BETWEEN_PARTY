@@ -6,7 +6,7 @@ import CustomAlert from "../components/CustomAlert";
 export default function LoginPage() {
   const [form, setForm] = useState({
     gender: "", // 성별
-    name: "", // 닉네임
+    name: "", // 예약자명(실명)
     phoneNumber: "", // 전화번호
     isCheck: false, // 개인 정보 수집 동의 여부
     isAdmin: false, // 호스트 여부
@@ -37,9 +37,10 @@ export default function LoginPage() {
       ...prev,
       phoneNumber: formattedValue,
     }));
-  }
+  };
   const isValidPhoneNumber = /^010-\d{4}-\d{4}$/.test(form.phoneNumber);
-  const isValid = !!form.gender && !!form.name && isValidPhoneNumber && form.isCheck;
+  const isValid =
+    !!form.gender && !!form.name && isValidPhoneNumber && form.isCheck;
 
   return (
     <>
@@ -65,7 +66,12 @@ export default function LoginPage() {
             <div className="input-group">
               <label htmlFor="gender">성별</label>
 
-              <select id="gender" className="input" value={form.gender} onChange={handleChange}>
+              <select
+                id="gender"
+                className="input"
+                value={form.gender}
+                onChange={handleChange}
+              >
                 <option value="">성별을 선택해주세요</option>
                 <option value="male">남성</option>
                 <option value="female">여성</option>
@@ -73,11 +79,18 @@ export default function LoginPage() {
 
               <p className="input-guide">성별을 선택해주세요.</p>
 
-              <label htmlFor="name">예약자명</label>
+              <label htmlFor="name">이름</label>
 
-              <input id="name" className="input" placeholder="" maxLength={15} value={form.name} onChange={handleChange} />
+              <input
+                id="name"
+                className="input"
+                placeholder=""
+                maxLength={15}
+                value={form.name}
+                onChange={handleChange}
+              />
 
-              <p className="input-guide">"예약자명"으로 작성해주세요.</p>
+              <p className="input-guide">이름을 입력해주세요.</p>
 
               <label htmlFor="phoneNumber">전화번호</label>
 
@@ -96,28 +109,37 @@ export default function LoginPage() {
             </div>
 
             <label className="check-group">
-                <input
+              <input
                 type="checkbox"
                 id="isCheck"
                 checked={form.isCheck}
                 onChange={(e) =>
-                    setForm((prev) => ({
+                  setForm((prev) => ({
                     ...prev,
                     isCheck: e.target.checked,
-                    }))
+                  }))
                 }
-                />
-                <span>개인 정보 수집에 동의합니다.</span>
+              />
+              <span>개인 정보 수집에 동의합니다.</span>
             </label>
 
-            <button className="enter-btn" disabled={!isValid} onClick={() => setAlertOpen(true)}>
+            <button
+              className="enter-btn"
+              disabled={!isValid}
+              onClick={() => setAlertOpen(true)}
+            >
               로그인
             </button>
           </div>
         </div>
       </div>
 
-      <CustomAlert open={alertOpen} title="BETWEEN PARTY" message="BETWEEN PARTY에 오신 걸 환영합니다🥳" onClose={() => setAlertOpen(false)} />
+      <CustomAlert
+        open={alertOpen}
+        title="BETWEEN PARTY"
+        message="BETWEEN PARTY에 오신 걸 환영합니다🥳"
+        onClose={() => setAlertOpen(false)}
+      />
     </>
   );
 }
