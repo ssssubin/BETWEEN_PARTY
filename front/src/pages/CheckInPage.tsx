@@ -19,7 +19,8 @@ export default function CheckInPage() {
     }));
   };
 
-  const isValid = !!form.region && !!form.nickname && !!form.mbti && !!form.todayFeature;
+  const isValid =
+    !!form.region && !!form.nickname && !!form.mbti && !!form.todayFeature;
 
   return (
     <>
@@ -41,22 +42,42 @@ export default function CheckInPage() {
             </h3>
 
             <div className="input-group">
-
               <label htmlFor="region">지역</label>
 
-              <input id="region" className="input" placeholder="예시: 신림" maxLength={15} value={form.region} onChange={handleChange} />
+              <input
+                id="region"
+                className="input"
+                placeholder="예시: 신림"
+                maxLength={15}
+                value={form.region}
+                onChange={handleChange}
+              />
 
               <p className="input-guide">"지역"을 입력해주세요.</p>
 
               <label htmlFor="nickname">닉네임</label>
 
-              <input id="nickname" className="input" placeholder="예시: 남주혁" maxLength={15} value={form.nickname} onChange={handleChange} />
+              <input
+                id="nickname"
+                className="input"
+                placeholder="예시: 남주혁"
+                maxLength={15}
+                value={form.nickname}
+                onChange={handleChange}
+              />
 
               <p className="input-guide">"연예인 이름"을 작성해주세요.</p>
 
               <label htmlFor="mbti">MBTI</label>
 
-              <input id="mbti" className="input" placeholder="예시: ESFJ" maxLength={4} value={form.mbti} onChange={handleChange} />
+              <input
+                id="mbti"
+                className="input"
+                placeholder="예시: ESFJ"
+                maxLength={4}
+                value={form.mbti.toUpperCase()}
+                onChange={handleChange}
+              />
 
               <p className="input-guide">MBTI를 입력해주세요.</p>
 
@@ -72,17 +93,28 @@ export default function CheckInPage() {
                 onChange={handleChange}
               />
 
-              <p className="input-guide">오늘 나를 알아볼 수 있는 특징 하나만 적어주세요. (8글자 내외)</p>
+              <p className="input-guide">
+                오늘 나를 알아볼 수 있는 특징 하나만 적어주세요. (8글자 내외)
+              </p>
             </div>
 
-            <button className="enter-btn" disabled={!isValid} onClick={() => setAlertOpen(true)}>
+            <button
+              className="enter-btn"
+              disabled={!isValid}
+              onClick={() => setAlertOpen(true)}
+            >
               체크인하기🤍
             </button>
           </div>
         </div>
       </div>
 
-      <CustomAlert open={alertOpen} title="BETWEEN PARTY" message="체크인이 완료되었습니다." onClose={() => setAlertOpen(false)} />
+      <CustomAlert
+        open={alertOpen}
+        title="BETWEEN PARTY"
+        message="체크인이 완료되었습니다😎"
+        onClose={() => setAlertOpen(false)}
+      />
     </>
   );
 }
