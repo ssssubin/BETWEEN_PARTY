@@ -1,172 +1,170 @@
 /* 기본 설정 */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* 웹 배경 */
 body {
-    background-color: #111;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
 
 #root {
-    min-height: 100dvh;
+  min-height: 100dvh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 모바일 화면 프레임 */
 .mobile-frame {
-    position: relative;
+  position: relative;
 
-    width: 390px;
-    height: 100dvh;
-    max-height: 100vh;
+  width: 390px;
+  height: 100dvh;
+  max-height: 100vh;
 
-    background-image: url("./assets/background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    border-radius: 28px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 
-    overflow: hidden;
+  overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 배경 어둡게 */
 .mobile-frame::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
 
-    background:
-        linear-gradient(
-            rgba(255, 120, 0, 0.45),
-            rgba(0, 0, 0, 0.45)
-        ),
-        url("./assets/background.png");
+  background:
+    linear-gradient(rgba(255, 120, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("./assets/background.png");
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    z-index: 0;
+  z-index: 0;
 }
 
 /* 실제 컨텐츠 */
 .mobile-frame > * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* 중앙 컨텐츠 */
 .container {
-    padding: 40px 24px;
+  padding: 40px 24px;
 
-    flex: 1;
+  flex: 1;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .inner {
-    margin: auto 0;
+  margin: auto 0;
 }
 
 /* 타이틀 */
 .title {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #ff7a5c;
-    text-align: center;
-    margin-bottom: 18px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ff7a5c;
+  text-align: center;
+  margin-bottom: 18px;
 
-    text-shadow:
-        0 0 6px rgba(255, 122, 92, 0.6),
-        0 0 12px rgba(255, 122, 92, 0.4),
-        0 0 20px rgba(255, 122, 92, 0.25);
+  text-shadow:
+    0 0 6px rgba(255, 122, 92, 0.6),
+    0 0 12px rgba(255, 122, 92, 0.4),
+    0 0 20px rgba(255, 122, 92, 0.25);
 }
 
 .subtitle {
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.6;
-    text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
 
-    color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
 
-    margin-bottom: 28px;
-    padding: 0 12px;
+  margin-bottom: 28px;
+  padding: 0 12px;
 
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* 입력 */
 select.input {
-    appearance: none;
-    background-color: #fff;
+  appearance: none;
+  background-color: #fff;
 }
 
 .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 24px;
 }
 
 .input-group label {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.75);
-    text-align: left;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: left;
 }
 
 .input-guide {
-    margin-top: 0;
-    font-size: 13px;
-    color: #888;
-    text-align: left;
+  margin-top: 0;
+  font-size: 13px;
+  color: #888;
+  text-align: left;
 }
 
 .input-guide.error {
-    color: #e53935;
+  color: #e53935;
 }
 
 .input.error {
-    border-color: #e53935;
+  border-color: #e53935;
 }
 
 .input {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    outline: none;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
 }
 
 .input:focus {
-    border-color: #000;
+  border-color: #000;
 }
 
 .check-group {
@@ -191,54 +189,53 @@ select.input {
 
 /* 입장 버튼 */
 .enter-btn {
-    width: 100%;
-    height: 48px;
-    border-radius: 12px;
-    border: none;
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
 
-    font-size: 16px;
-    font-weight: 600;
+  font-size: 16px;
+  font-weight: 600;
 
-    background: rgba(255, 122, 92, 0.3);
-    color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 122, 92, 0.3);
+  color: rgba(255, 255, 255, 0.6);
 
+  cursor: not-allowed;
 
-    cursor: not-allowed;
-
-    transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 /* 활성화 */
 .enter-btn:not(:disabled) {
-    background-color: #ff6b57; /*#fc5230 */
-    color: #fff;
-    cursor: pointer;
+  background-color: #ff6b57; /*#fc5230 */
+  color: #fff;
+  cursor: pointer;
 
-    box-shadow:
-        0 0 8px rgba(255, 107, 87, 0.6),
-        0 0 18px rgba(255, 107, 87, 0.35);
+  box-shadow:
+    0 0 8px rgba(255, 107, 87, 0.6),
+    0 0 18px rgba(255, 107, 87, 0.35);
 
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
 }
 
 /* 클릭 */
 .enter-btn:not(:disabled):active {
-    transform: scale(0.98);
-    background-color: #e85a48;
+  transform: scale(0.98);
+  background-color: #e85a48;
 
-    box-shadow:
-        0 0 6px rgba(255, 107, 87, 0.5),
-        0 0 12px rgba(255, 107, 87, 0.25);
+  box-shadow:
+    0 0 6px rgba(255, 107, 87, 0.5),
+    0 0 12px rgba(255, 107, 87, 0.25);
 }
 
 /* Hover */
 .enter-btn:not(:disabled):hover {
-    box-shadow:
-        0 0 10px rgba(255, 107, 87, 0.75),
-        0 0 26px rgba(255, 107, 87, 0.45);
+  box-shadow:
+    0 0 10px rgba(255, 107, 87, 0.75),
+    0 0 26px rgba(255, 107, 87, 0.45);
 }
 
 /* =========================
@@ -246,107 +243,110 @@ select.input {
 ========================= */
 
 .alert-overlay {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
 
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
 
-    display: none;
-    align-items: center;
-    justify-content: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
 
-    z-index: 9999;
+  z-index: 9999;
+}
+
+.alert-overlay.open {
+  display: flex;
 }
 
 .alert-box {
-    width: 300px;
-    padding: 28px 24px;
-    border-radius: 16px;
-    text-align: center;
+  width: 300px;
+  padding: 28px 24px;
+  border-radius: 16px;
+  text-align: center;
 
-    background: rgba(15, 15, 15, 0.9);
-    border: 1px solid rgba(255, 107, 87, 0.35);
+  background: rgba(15, 15, 15, 0.9);
+  border: 1px solid rgba(255, 107, 87, 0.35);
 
-    box-shadow:
-        0 0 12px rgba(255, 107, 87, 0.35),
-        0 0 28px rgba(255, 107, 87, 0.15);
+  box-shadow:
+    0 0 12px rgba(255, 107, 87, 0.35),
+    0 0 28px rgba(255, 107, 87, 0.15);
 }
 
 .alert-box h2 {
-    margin: 0 0 12px;
+  margin: 0 0 12px;
 
-    font-size: 22px;
-    letter-spacing: 2px;
+  font-size: 22px;
+  letter-spacing: 2px;
 
-    color: #ff6b57;
+  color: #ff6b57;
 
-    text-shadow:
-        0 0 6px rgba(255, 107, 87, 0.7),
-        0 0 14px rgba(255, 107, 87, 0.4);
+  text-shadow:
+    0 0 6px rgba(255, 107, 87, 0.7),
+    0 0 14px rgba(255, 107, 87, 0.4);
 }
 
 .alert-box p {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 
-    margin: 0 0 22px;
+  margin: 0 0 22px;
 
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
 
-    line-height: 1.4;
+  line-height: 1.4;
 }
 
 #alert-ok {
-    padding: 10px 28px;
+  padding: 10px 28px;
 
-    border-radius: 20px;
-    border: none;
+  border-radius: 20px;
+  border: none;
 
-    background-color: #ff6b57;
-    color: #fff;
+  background-color: #ff6b57;
+  color: #fff;
 
-    font-size: 14px;
-    cursor: pointer;
+  font-size: 14px;
+  cursor: pointer;
 
-    box-shadow:
-        0 0 8px rgba(255, 107, 87, 0.6),
-        0 0 18px rgba(255, 107, 87, 0.35);
+  box-shadow:
+    0 0 8px rgba(255, 107, 87, 0.6),
+    0 0 18px rgba(255, 107, 87, 0.35);
 
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 #alert-ok:active {
-    transform: scale(0.96);
+  transform: scale(0.96);
 
-    box-shadow:
-        0 0 6px rgba(255, 107, 87, 0.5),
-        0 0 12px rgba(255, 107, 87, 0.25);
+  box-shadow:
+    0 0 6px rgba(255, 107, 87, 0.5),
+    0 0 12px rgba(255, 107, 87, 0.25);
 }
 
 /* 모바일 */
 @media (max-width: 420px) {
+  #root {
+    min-height: 100dvh;
+    align-items: stretch;
+  }
 
-    #root {
-        min-height: 100dvh;
-        align-items: stretch;
-    }
+  body {
+    background: linear-gradient(
+      rgba(255, 140, 0, 0.45),
+      rgba(255, 94, 0, 0.45)
+    );
+  }
 
-    body {
-        background: linear-gradient(
-            rgba(255, 140, 0, 0.45),
-            rgba(255, 94, 0, 0.45)
-        );
-    }
+  .mobile-frame {
+    width: 100%;
+    height: 100dvh;
 
-    .mobile-frame {
-        width: 100%;
-        height: 100dvh;
-
-        border-radius: 0;
-        box-shadow: none;
-    }
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
