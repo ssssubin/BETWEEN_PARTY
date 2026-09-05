@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "gender": "male",
+    "region": "신림",
+    "nickname": "남주혁",
+    "mbti": "ENFP",
+    "feature": "말이 많아요 🗣️"
+  },
+  {
+    "id": 2,
+    "gender": "female",
+    "region": "강남",
+    "nickname": "수지",
+    "mbti": "INFJ",
+    "feature": "커피를 좋아해요 ☕"
+  },
+  {
+    "id": 3,
+    "gender": "male",
+    "region": "홍대",
+    "nickname": "코드쿤스트",
+    "mbti": "ENTP",
+    "feature": "여행을 좋아해요 ✈️"
+  },
+  {
+    "id": 4,
+    "gender": "female",
+    "region": "잠실",
+    "nickname": "아이유",
+    "mbti": "ISFP",
+    "feature": "고양이를 좋아해요 🐱"
+  },
+  {
+    "id": 5,
+    "gender": "male",
+    "region": "성수",
+    "nickname": "이현우",
+    "mbti": "ISTP",
+    "feature": "운동을 좋아해요 🏃"
+  },
+  {
+    "id": 6,
+    "gender": "female",
+    "region": "건대",
+    "nickname": "카리나",
+    "mbti": "ENFP",
+    "feature": "맛집 탐방을 좋아해요 🍴"
+  },
+  {
+    "id": 7,
+    "gender": "male",
+    "region": "서울대입구",
+    "nickname": "준호",
+    "mbti": "INTJ",
+    "feature": "영화를 좋아해요 🎬"
+  },
+  {
+    "id": 8,
+    "gender": "female",
+    "region": "사당",
+    "nickname": "이성경",
+    "mbti": "ESFJ",
+    "feature": "사진 찍는 걸 좋아해요 📷"
+  },
+  {
+    "id": 9,
+    "gender": "male",
+    "region": "역삼",
+    "nickname": "이도현",
+    "mbti": "ESTP",
+    "feature": "술자리를 좋아해요 🍻"
+  },
+  {
+    "id": 10,
+    "gender": "female",
+    "region": "합정",
+    "nickname": "신예은",
+    "mbti": "INFP",
+    "feature": "음악을 좋아해요 🎵"
+  },
+  {
+    "id": 11,
+    "gender": "male",
+    "region": "신촌",
+    "nickname": "txt 태현",
+    "mbti": "ENTJ",
+    "feature": "축구를 좋아해요 ⚽"
+  },
+  {
+    "id": 12,
+    "gender": "female",
+    "region": "이태원",
+    "nickname": "안유진",
+    "mbti": "ISTJ",
+    "feature": "책 읽는 걸 좋아해요 📚"
+  },
+  {
+    "id": 13,
+    "gender": "female",
+    "region": "역삼",
+    "nickname": "신예은",
+    "mbti": "ISFP",
+    "feature": "분홍색 반팔티"
+  }
+]
