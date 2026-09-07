@@ -1,0 +1,379 @@
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 웹 배경 */
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#root {
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모바일 화면 프레임 */
+.mobile-frame {
+  position: relative;
+
+  width: 390px;
+  height: 100dvh;
+  max-height: 100vh;
+
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 배경 어둡게 */
+.mobile-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(255, 120, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("./assets/background.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+/* 실제 컨텐츠 */
+.mobile-frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 중앙 컨텐츠 */
+.container {
+  padding: 40px 24px;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.inner {
+  margin: auto 0;
+}
+
+/* 타이틀 */
+.title {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ff7a5c;
+  text-align: center;
+  margin-bottom: 18px;
+
+  line-height: 1.5; /* 줄 사이 간격 */
+
+  text-shadow:
+    0 0 6px rgba(255, 122, 92, 0.6),
+    0 0 12px rgba(255, 122, 92, 0.4),
+    0 0 20px rgba(255, 122, 92, 0.25);
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  margin-bottom: 28px;
+  padding: 0 12px;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* 투표자 영역 */ 
+.voter-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.voter-number {
+  position: relative;
+
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.15),
+    inset 0 0 8px rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.voter-info {
+  text-align: left;
+}
+
+.voter-section {
+  width: 100%;
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* 득표 수 */
+.vote-count {
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.vote-count strong {
+  color: #ff7a5c;
+  font-size: 21px;
+  font-weight: 800;
+
+  text-shadow:
+    0 0 6px rgba(255, 122, 92, 0.6),
+    0 0 12px rgba(255, 122, 92, 0.4),
+    0 0 20px rgba(255, 122, 92, 0.25);
+}
+
+/* 투표자 목록 */
+.voter-list {
+  width: 100%;
+  max-height: 300px;
+  padding: 4px 2px 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  overflow-y: auto;
+}
+
+/* 투표자 카드 */
+.voter-card {
+  width: 100%;
+  padding: 15px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+/* 카드 터치/호버 */
+.voter-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* 닉네임 */
+.voter-nickname {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 투표자가 없을 때 */
+.voter-section > p {
+  margin: 20px 0;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 스크롤바 */
+.voter-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.voter-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.voter-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+}
+
+/* =========================
+   알림창
+========================= */
+
+.alert-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.alert-overlay.open {
+  display: flex;
+}
+
+.alert-box {
+  width: 300px;
+  padding: 28px 24px;
+  border-radius: 16px;
+  text-align: center;
+
+  background: rgba(15, 15, 15, 0.9);
+  border: 1px solid rgba(255, 107, 87, 0.35);
+
+  box-shadow:
+    0 0 12px rgba(255, 107, 87, 0.35),
+    0 0 28px rgba(255, 107, 87, 0.15);
+}
+
+.alert-box h2 {
+  margin: 0 0 12px;
+
+  font-size: 22px;
+  letter-spacing: 2px;
+
+  color: #ff6b57;
+
+  text-shadow:
+    0 0 6px rgba(255, 107, 87, 0.7),
+    0 0 14px rgba(255, 107, 87, 0.4);
+}
+
+.alert-box p {
+  display: block;
+  opacity: 1;
+
+  margin: 0 0 22px;
+
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+
+  line-height: 1.4;
+}
+
+#alert-ok {
+  padding: 10px 28px;
+
+  border-radius: 20px;
+  border: none;
+
+  background-color: #ff6b57;
+  color: #fff;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 8px rgba(255, 107, 87, 0.6),
+    0 0 18px rgba(255, 107, 87, 0.35);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#alert-ok:active {
+  transform: scale(0.96);
+
+  box-shadow:
+    0 0 6px rgba(255, 107, 87, 0.5),
+    0 0 12px rgba(255, 107, 87, 0.25);
+}
+
+/* 모바일 */
+@media (max-width: 420px) {
+  #root {
+    min-height: 100dvh;
+    align-items: stretch;
+  }
+
+  body {
+    background: linear-gradient(
+      rgba(255, 140, 0, 0.45),
+      rgba(255, 94, 0, 0.45)
+    );
+  }
+
+  .mobile-frame {
+    width: 100%;
+    height: 100dvh;
+
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
