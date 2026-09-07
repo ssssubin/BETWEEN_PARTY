@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./GuessNotePage.css";
+import "./css/GuessNotePage.css";
 import background from "../assets/background.png";
 import guessData from "../mock/guessNotes.json"; // 경로 설정
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./WaitingRoomPage.css";
+import "./css/WaitingRoomPage.css";
 import background from "../assets/background.png";
 import CustomAlert from "../components/CustomAlert";
 

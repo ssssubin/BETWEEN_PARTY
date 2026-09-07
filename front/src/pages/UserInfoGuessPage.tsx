@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./UserInfoGuessPage.css";
+import "./css/UserInfoGuessPage.css";
 import background from "../assets/background.png";
 import CustomAlert from "../components/CustomAlert";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./GuestListPage.css";
+import "./css/GuestListPage.css";
 import background from "../assets/background.png";
 import CustomAlert from "../components/CustomAlert";
 import guestData from '../mock/guestList.json'; // 경로 설정

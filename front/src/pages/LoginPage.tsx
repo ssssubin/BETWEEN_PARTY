@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./LoginPage.css";
+import "./css/LoginPage.css";
 import background from "../assets/background.png";
 import CustomAlert from "../components/CustomAlert";
 
@@ -120,7 +120,7 @@ export default function LoginPage() {
                   }))
                 }
               />
-              <span>개인 정보 수집에 동의합니다.</span>
+              <span>개인 정보(이름, 전화번호) 수집에 동의합니다.</span>
             </label>
 
             <button

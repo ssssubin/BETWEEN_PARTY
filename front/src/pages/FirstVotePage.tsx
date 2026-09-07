@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./FirstVotePage.css";
+import "./css/FirstVotePage.css";
 import background from "../assets/background.png";
 import CustomAlert from "../components/CustomAlert";
 import guestData from "../mock/checkInGuestList.json"; // 경로 설정
