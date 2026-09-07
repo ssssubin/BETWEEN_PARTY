@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./css/FirstVotePage.css";
 import background from "../assets/background.png";
-import CustomAlert from "../components/CustomAlert";
-import guestData from "../mock/checkInGuestList.json"; // 경로 설정
+import CustomAlert from "../../components/CustomAlert";
+import guestData from "../../mock/checkInGuestList.json"; // 경로 설정
 
 export default function FirstVotePage() {
   const [alertOpen, setAlertOpen] = useState(false);

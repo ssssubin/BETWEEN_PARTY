@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./css/CheckInPage.css";
 import background from "../assets/background.png";
-import CustomAlert from "../components/CustomAlert";
+import CustomAlert from "../../components/CustomAlert";
 
 export default function CheckInPage() {
   const [form, setForm] = useState({

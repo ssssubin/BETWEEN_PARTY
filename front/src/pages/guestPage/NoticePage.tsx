@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./css/NoticePage.css";
 import background from "../assets/background.png";
-import CustomAlert from "../components/CustomAlert";
-import Notice from "../components/Notice";
+import CustomAlert from "../../components/CustomAlert";
+import Notice from "../../components/Notice";
 
 export default function NoticePage() {
   const [alertOpen, setAlertOpen] = useState(false);

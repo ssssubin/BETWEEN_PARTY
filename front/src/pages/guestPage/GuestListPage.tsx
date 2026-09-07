@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./css/GuestListPage.css";
 import background from "../assets/background.png";
-import CustomAlert from "../components/CustomAlert";
-import guestData from '../mock/guestList.json'; // 경로 설정
+import CustomAlert from "../../components/CustomAlert";
+import guestData from '../../mock/guestList.json'; // 경로 설정
 
 export default function NoticePage() {
   const [alertOpen, setAlertOpen] = useState(false);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./css/LoginPage.css";
 import background from "../assets/background.png";
-import CustomAlert from "../components/CustomAlert";
+import CustomAlert from "../../components/CustomAlert";
 
 export default function LoginPage() {
   const [form, setForm] = useState({
