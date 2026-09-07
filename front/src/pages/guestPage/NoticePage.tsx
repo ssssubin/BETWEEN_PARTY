@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./css/NoticePage.css";
-import background from "../assets/background.png";
+import background from "../../assets/background.png";
 import CustomAlert from "../../components/CustomAlert";
 import Notice from "../../components/Notice";
 
