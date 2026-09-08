@@ -84,7 +84,12 @@ body {
   flex-direction: column;
 
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+
+   /* 1. 최신 표준 방식 (Firefox, 최신 Chrome/Edge) */
+    /* auto | thin | none */
+    scrollbar-width: thin; 
+     /* [스크롤바 막대 색상] [트랙(배경) 색상] */
+    scrollbar-color: rgb(199, 120, 0, 0.3) transparent;
 }
 
 .inner {
@@ -109,7 +114,7 @@ body {
 .subtitle {
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 2.0;
   text-align: center;
 
   color: rgba(255, 255, 255, 0.75);
