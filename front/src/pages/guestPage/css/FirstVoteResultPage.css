@@ -1,0 +1,204 @@
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 웹 배경 */
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#root {
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모바일 화면 프레임 */
+.mobile-frame {
+  position: relative;
+
+  width: 390px;
+  height: 100dvh;
+  max-height: 100vh;
+
+  background-image: url("./assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 배경 어둡게 */
+.mobile-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(255, 120, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("./assets/background.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+/* 실제 컨텐츠 */
+.mobile-frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 중앙 컨텐츠 */
+.container {
+  padding: 40px 24px;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+   /* 1. 최신 표준 방식 (Firefox, 최신 Chrome/Edge) */
+    /* auto | thin | none */
+    scrollbar-width: thin; 
+     /* [스크롤바 막대 색상] [트랙(배경) 색상] */
+    scrollbar-color: rgb(199, 120, 0, 0.3) transparent;
+}
+
+/* ========================= 
+    상단 고정 영역 
+    ========================= */
+
+.fixed-header {
+  flex-shrink: 0;
+  width: 100%;
+  padding-top: 30px;
+}
+
+/* 타이틀 */
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ff7a5c;
+  text-align: center;
+  margin-bottom: 18px;
+
+  text-shadow:
+    0 0 6px rgba(255, 122, 92, 0.6),
+    0 0 12px rgba(255, 122, 92, 0.4),
+    0 0 20px rgba(255, 122, 92, 0.25);
+}
+
+.subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  margin-bottom: 28px;
+  padding: 0 12px;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.inner {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-card {
+  width: 100%;
+  max-width: 320px;
+  padding: 40px 20px;
+  transform: translateY(-40px);
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+
+  backdrop-filter: blur(8px);
+}
+
+.result-icon {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+.result-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.result-notice {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+
+  color: rgba(255, 14, 14, 0.75);
+
+  margin-bottom: 28px;
+
+  padding: 0 12px;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* 모바일 */
+@media (max-width: 420px) {
+  #root {
+    min-height: 100dvh;
+    align-items: stretch;
+  }
+
+  body {
+    background: linear-gradient(
+      rgba(255, 140, 0, 0.45),
+      rgba(255, 94, 0, 0.45)
+    );
+  }
+
+  .mobile-frame {
+    width: 100%;
+    height: 100dvh;
+
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
