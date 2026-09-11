@@ -1,0 +1,403 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 웹 배경 */
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.host-page {
+    width: 100%;
+    min-width: 1200px;
+    min-height: 100vh;
+    /* background: #f5f2f2; */
+    background:
+    linear-gradient(rgba(255, 120, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../../../assets/background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family:
+        Pretendard,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* =========================
+   Header
+========================= */
+
+.host-header {
+    width: 100%;
+    height: 87px;
+
+    padding: 0 3.6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    /* background: #fff; */
+    border-bottom: 1px solid #ead8d2;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.party-name {
+  color: #ff7a5c;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.header-title h1 {
+  margin: 0;
+
+  color: #fff;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 성별 인원 */
+
+.gender-count {
+  min-width: 58px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gender-count.female {
+  color: #d9577a;
+  background: #fbe5eb;
+}
+
+.gender-count.male {
+  color: #3578ad;
+  background: #e1f0fb;
+}
+
+/* 입장 토글 */
+
+.admission-toggle {
+  width: 154px;
+  height: 43px;
+
+  margin-left: 5px;
+  padding: 0 9px 0 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #e6aaa0;
+  border-radius: 9px;
+
+  background: #fff0ed;
+
+  cursor: pointer;
+}
+
+.admission-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+.admission-text span {
+  color: #555;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.admission-text strong {
+  color: #e05a4f;
+  font-size: 12px;
+}
+
+.toggle {
+  width: 34px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 2px;
+
+  border-radius: 20px;
+  background: #bbb;
+}
+
+.toggle-circle {
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  background: #fff;
+
+  transition: transform 0.2s;
+}
+
+.admission-toggle:not(.closed) .toggle-circle {
+  transform: translateX(12px);
+}
+
+.admission-toggle:not(.closed) .toggle {
+  background: #ff7a5c;
+}
+
+.end-event-button {
+  height: 34px;
+  padding: 0 13px;
+
+  margin-left: 1px;
+
+  border: 1px solid #dfa79e;
+  border-radius: 7px;
+
+  background: #fff;
+  color: #b94c40;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================
+   Stage
+========================= */
+
+.stage-section {
+  width: 100%;
+  min-height: 125px;
+
+  padding: 16px 3.6vw;
+
+  display: flex;
+  gap: 13px;
+
+}
+
+.current-stage-card {
+  width: 235px;
+  min-width: 235px;
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-radius: 8px;
+  background: #fff;
+}
+
+.current-stage-card span {
+  margin-bottom: 8px;
+
+  color: #777;
+  font-size: 11px;
+}
+
+.current-stage-card strong {
+  font-size: 14px;
+}
+
+.current-stage-card em {
+  margin-top: 7px;
+
+  color: #e34d43;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.stage-list {
+  flex: 1;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stage-card {
+  padding: 11px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: #fff;
+}
+
+.stage-card.active {
+  border-color: #e53935;
+}
+
+.stage-title {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.stage-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.stage-buttons button {
+  height: 31px;
+
+  flex: 1;
+
+  border: 0;
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.start-button {
+  color: #fff;
+  background: #fc5230;
+}
+
+.end-button {
+  color: #555;
+  background: #e9e5e3;
+}
+
+/* =========================
+   Tabs
+========================= */
+
+.host-tabs {
+  height: 55px;
+  padding-left: 46px;
+
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+
+  border-bottom: 1px solid #ead8d2;
+
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.tab {
+  min-width: 80px;
+
+  padding: 0 13px;
+
+  position: relative;
+
+  border: 0;
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #ff7a5c;
+  font-weight: 800;
+}
+
+.tab.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 2px;
+
+  background: #ff7a5c;
+}
+
+/* =========================
+   Content
+========================= */
+
+.host-content {
+  width: 100%;
+
+  padding: 20px 3.6vw 50px;
+}
+
+/* =========================
+   Other tabs
+========================= */
+
+.empty-content {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #888;
+}
+
+.empty-content h2 {
+  margin: 0 0 10px;
+
+  color: #333;
+  font-size: 20px;
+}
+
+.empty-content p {
+  margin: 0;
+
+  font-size: 13px;
+}
