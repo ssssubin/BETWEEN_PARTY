@@ -4,6 +4,8 @@ import background from "../../assets/background.png";
 import guestData  from "../../mock/guestList.json"
 import type { Participant } from "../../types/participant";
 import { ParticipantSection } from "../../components/Participants";
+import firstVoteData from "../../mock/firstVoteResult.json"
+import { FirstVoteResultSection } from "../../components/FirstVoteResultSection";
 
 const stages = [
   "첫인상 투표",
@@ -29,6 +31,58 @@ export default function MainPage() {
 
   const femaleParticipants: Participant[] = guestData.filter((person) => person.gender === "female");
   const maleParticipants: Participant[] = guestData.filter((person) => person.gender === "male");
+
+  const femaleVoteResults = firstVoteData.results
+  .map((result) => {
+    const participant = guestData.find(
+      (person) => person.id === result.participantId
+    );
+
+    if (!participant) return null;
+
+    return {
+      participant,
+      voteCount: result.voteCount,
+    };
+  })
+  .filter(
+    (
+      result
+    ): result is {
+      participant: Participant;
+      voteCount: number;
+    } => result !== null
+  )
+  .filter(
+    (result) => result.participant.gender === "female"
+  )
+  .sort((a, b) => b.voteCount - a.voteCount);
+
+const maleVoteResults = firstVoteData.results
+  .map((result) => {
+    const participant = guestData.find(
+      (person) => person.id === result.participantId
+    );
+
+    if (!participant) return null;
+
+    return {
+      participant,
+      voteCount: result.voteCount,
+    };
+  })
+  .filter(
+    (
+      result
+    ): result is {
+      participant: Participant;
+      voteCount: number;
+    } => result !== null
+  )
+  .filter(
+    (result) => result.participant.gender === "male"
+  )
+  .sort((a, b) => b.voteCount - a.voteCount);
 
   const handleStageStart = (index: number) => {
     setCurrentStage(index);
@@ -160,14 +214,24 @@ export default function MainPage() {
 
       {/* Content */}
       <main className="host-content">
-        {activeTab === "참가자" && (
+        {activeTab === tabs[0] && ( // 참가자 목록
           <ParticipantSection
             femaleParticipants={femaleParticipants}
             maleParticipants={maleParticipants}
           />
         )}
 
-        {activeTab !== "참가자" && (
+        {activeTab === tabs[1] && ( // 첫인상 투표 결과
+          <FirstVoteResultSection
+            femaleResults={femaleVoteResults}
+            maleResults={maleVoteResults}
+            participants={guestData}
+            voteRelations={firstVoteData.relations}
+        />
+        )}
+
+        {activeTab !== "참가자" &&
+            activeTab !== "첫인상 투표" && (
           <div className="empty-content">
             <h2>{activeTab}</h2>
             <p>해당 기능의 운영 화면입니다.</p>
