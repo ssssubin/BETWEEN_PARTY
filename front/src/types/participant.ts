@@ -4,4 +4,5 @@ export interface Participant {
   phoneNum: string;
   nickname: string;
   gender: string;
+  region?: string;
 }
