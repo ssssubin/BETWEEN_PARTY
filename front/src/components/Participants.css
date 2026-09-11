@@ -1,0 +1,152 @@
+.participant-container {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.participant-column {
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  border-top: 1px solid #eee;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.pagination button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #777;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #fff1ed;
+  color: #ff7a5c;
+}
+
+.pagination-number.active {
+  color: #fff;
+  background: #ff7a5c;
+  font-weight: 800;
+}
+
+.pagination-number.active:hover {
+  color: #fff;
+  background: #ff7a5c;
+}
+
+.pagination-arrow {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+
+.pagination button:disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+.participant-header {
+  height: 47px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.participant-column.female .participant-header {
+  color: #b94d6d;
+  background: #fbe1e7;
+}
+
+.participant-column.male .participant-header {
+  color: #3975a3;
+  background: #dceefa;
+}
+
+.participant-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  background: #fff;
+}
+
+.participant-row {
+  min-width: 0;
+  min-height: 68px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #eee;
+}
+
+.participant-row:nth-child(3n + 1),
+.participant-row:nth-child(3n + 2) {
+  border-right: 1px solid #eee;
+}
+
+.participant-row:hover {
+  background: #fff8f6;
+}
+
+.participant-row:hover {
+  background: #fff8f6;
+}
+
+.participant-row:last-child {
+  border-bottom: 0;
+}
+
+.participant-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.participant-info strong {
+  font-size: 13px;
+}
+
+.participant-info span {
+  color: #777;
+  font-size: 10px;
+}
