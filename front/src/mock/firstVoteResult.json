@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "participantId": 1,
+      "voteCount": 8
+    },
+    {
+      "participantId": 2,
+      "voteCount": 5
+    },
+    {
+      "participantId": 3,
+      "voteCount": 4
+    }
+  ],
+  "relations": [
+    {
+      "voterId": 10,
+      "targetId": 1
+    },
+    {
+      "voterId": 11,
+      "targetId": 1
+    },
+    {
+      "voterId": 1,
+      "targetId": 20
+    },
+    {
+      "voterId": 2,
+      "targetId": 15
+    }
+  ]
+}
