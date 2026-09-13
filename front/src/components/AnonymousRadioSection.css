@@ -1,0 +1,74 @@
+.anonymous-radio-section {
+  width: 100%;
+}
+
+/* Select Box 영역 */
+.radio-filter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Select Box */
+.radio-participant-select {
+  flex: 1;
+  /* min-width: 0; */
+  max-width: 120px;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: #222;
+
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.radio-participant-select:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.radio-participant-select:focus {
+  outline: none;
+
+  border-color: rgba(255, 120, 0, 0.8);
+}
+
+.radio-message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio-message-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 12px rgba(255, 120, 0, 0.15);
+
+  text-align: left;
+}
+
+.radio-message-to {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ff7a5c;
+}
+
+.radio-message-from {
+  font-size: 10px;
+  color: #fff;
+}
+
+.radio-message-content {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  word-break: keep-all;
+
+  color: #fff;
+}
