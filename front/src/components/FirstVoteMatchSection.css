@@ -1,0 +1,90 @@
+.first-vote-match-section {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.match-section-title {
+  margin: 0 0 24px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* 매칭 결과를 2개씩 */
+
+.match-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* 하나의 매칭 카드 */
+
+.match-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  min-height: 60px;
+  padding: 14px 20px;
+
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-sizing: border-box;
+}
+
+/* 남성 */
+
+.male-match {
+  color: #4da6ff;
+  font-size: 18px;
+  font-weight: 700;
+
+  text-shadow:
+    0 0 5px #4da6ff,
+    0 0 10px #4da6ff,
+    0 0 20px #0077ff;
+}
+
+/* 여성 */
+
+.female-match {
+  color: #ff6fae;
+  font-size: 18px;
+  font-weight: 700;
+
+  text-shadow:
+    0 0 5px #ff6fae,
+    0 0 10px #ff6fae,
+    0 0 20px #ff2f92;
+}
+
+/* ↔ */
+
+.match-arrow {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* 화면이 좁아졌을 때 */
+@media (max-width: 800px) {
+  .match-list {
+    grid-template-columns: 1fr;
+  }
+
+  .match-card {
+    padding: 12px;
+  }
+
+  .male-match,
+  .female-match {
+    font-size: 16px;
+  }
+}
