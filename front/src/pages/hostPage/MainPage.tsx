@@ -5,8 +5,10 @@ import guestData from "../../mock/guestList.json";
 import type { Participant } from "../../types/participant";
 import { ParticipantSection } from "../../components/Participants";
 import { FirstVoteResultSection } from "../../components/FirstVoteResultSection";
-import { FirstVoteMatchSection } from "../../components/FirstVoteMatchSection";
 import { AnonymousRadioSection } from "../../components/AnonymousRadioSection";
+import voteHistory from "../../mock/firstVoteHistory.json"
+import { VoteMatchSection } from "../../components/VoteMatchSection";
+import { VoteHistorySection } from "../../components/VoteHistorySection";
 
 const stages = [
   "대기",
@@ -257,12 +259,20 @@ export default function MainPage() {
               femaleResults={femaleVoteResults}
               maleResults={maleVoteResults}
             />
-            <FirstVoteMatchSection matches={matchResults} />
+            <VoteMatchSection matches={matchResults} title={"첫인상"}/>
+            <VoteHistorySection voteHistories={voteHistory} title={"첫인상"}/>
           </>
         )}
 
         {activeTab === tabs[2] && ( // 익명 라디오
           <AnonymousRadioSection messages={radioMessages} />
+        )}
+
+        {activeTab === tabs[3] && ( // 최종투표
+          <>
+            <VoteMatchSection matches={matchResults} title={"최종"}/>
+            <VoteHistorySection voteHistories={voteHistory} title={"최종"}/>
+          </>
         )}
 
         {!tabs.includes(activeTab) && (

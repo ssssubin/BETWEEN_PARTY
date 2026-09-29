@@ -1,0 +1,317 @@
+.first-vote-history-section {
+  width: 100%;
+  margin-top: 7px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.vote-history-header {
+  margin-bottom: 20px;
+}
+
+.vote-history-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.vote-history-header p {
+  margin: 7px 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+/* =========================
+   Columns
+========================= */
+
+.vote-history-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.vote-history-column {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  background: rgba(10, 10, 15, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+/* =========================
+   Column Title
+========================= */
+
+.column-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.column-title.female {
+  color: #ff5db1;
+  text-shadow:
+    0 0 5px rgba(255, 93, 177, 0.9),
+    0 0 12px rgba(255, 93, 177, 0.7);
+}
+
+.column-title.male {
+  color: #45a9ff;
+  text-shadow:
+    0 0 5px rgba(69, 169, 255, 0.9),
+    0 0 12px rgba(69, 169, 255, 0.7);
+}
+
+.column-title .count {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: none;
+}
+
+/* =========================
+   Search
+========================= */
+
+.search-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+
+  padding: 0 14px 0 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+
+  font-size: 13px;
+
+  transition: 0.2s;
+}
+
+.search-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.search-wrapper input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 17px;
+  top: 43%;
+
+  transform: translateY(-50%);
+
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 20px;
+
+  pointer-events: none;
+}
+
+/* =========================
+   History List
+========================= */
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-height: 500px;
+  overflow-y: auto;
+
+  padding-right: 4px;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   History Card
+========================= */
+
+.vote-history-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 10px 14px;
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.045);
+
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    border-color 0.2s;
+
+  /* 추가 */
+  flex-wrap: nowrap;
+}
+
+.vote-history-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   Target Nickname
+========================= */
+
+/* 투표한 사람 */
+.nickname-neon {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nickname-neon.female {
+  color: #ff5db1;
+
+  text-shadow:
+    0 0 5px rgba(255, 93, 177, 0.9),
+    0 0 10px rgba(255, 93, 177, 0.8),
+    0 0 18px rgba(255, 93, 177, 0.5);
+}
+
+.nickname-neon.male {
+  color: #45a9ff;
+
+  text-shadow:
+    0 0 5px rgba(69, 169, 255, 0.9),
+    0 0 10px rgba(69, 169, 255, 0.8),
+    0 0 18px rgba(69, 169, 255, 0.5);
+}
+
+/* =========================
+   Arrow
+========================= */
+
+.vote-arrow {
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 18px;
+}
+
+/* =========================
+   Voters
+========================= */
+/* 투표 대상 전체 */
+.voter-list {
+  display: block;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 5px;
+
+   text-align: left;
+}
+
+
+/* 각각의 대상 */
+.voter-list > span {
+  display: inline;
+  white-space: nowrap;
+}
+
+
+/* 닉네임 */
+.voter-nickname {
+  display: inline;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* 쉼표 */
+.comma {
+  display: inline;
+  white-space: pre;
+}
+
+.voter-nickname.female {
+  color: #ff8bc7;
+
+  text-shadow:
+    0 0 4px rgba(255, 139, 199, 0.8),
+    0 0 9px rgba(255, 139, 199, 0.5);
+}
+
+.voter-nickname.male {
+  color: #70bdff;
+
+  text-shadow:
+    0 0 4px rgba(112, 189, 255, 0.8),
+    0 0 9px rgba(112, 189, 255, 0.5);
+}
+
+/* =========================
+   Empty
+========================= */
+
+.empty-history {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100px;
+
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 900px) {
+  .vote-history-columns {
+    grid-template-columns: 1fr;
+  }
+}
+

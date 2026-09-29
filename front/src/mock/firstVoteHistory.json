@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1,
+        "nickname": "신림_지드래곤",
+        "gender": "male",
+        "voters": [
+            {
+                "id": 21,
+                "nickname": "성수_아이유"
+            },
+            {
+                "id": 22,
+                "nickname": "연남_수지"
+            },
+            {
+                "id": 23,
+                "nickname": "한남_김태리"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nickname": "성수_박보검",
+        "gender": "male",
+        "voters": [
+            {
+                "id": 21,
+                "nickname": "성수_아이유"
+            },
+            {
+                "id": 24,
+                "nickname": "망원_손예진"
+            },
+            {
+                "id": 27,
+                "nickname": "익선_김지원"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nickname": "홍대_김수현",
+        "gender": "male",
+        "voters": [
+            {
+                "id": 21,
+                "nickname": "성수_아이유"
+            },
+            {
+                "id": 30,
+                "nickname": "잠실_정유미"
+            },
+            {
+                "id": 35,
+                "nickname": "부산_장원영"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "nickname": "성수_아이유",
+        "gender": "female",
+        "voters": [
+            {
+                "id": 1,
+                "nickname": "신림_지드래곤"
+            },
+            {
+                "id": 2,
+                "nickname": "성수_박보검"
+            },
+            {
+                "id": 5,
+                "nickname": "연남_정해인"
+            }
+        ]
+    },{
+        "id": 22,
+        "nickname": "연남_수지",
+        "gender": "female",
+        "voters": [
+            {
+                "id": 3,
+                "nickname": "홍대_김수현"
+            },
+            {
+                "id": 4,
+                "nickname": "강남_이준기"
+            },
+            {
+                "id": 5,
+                "nickname": "연남_정해인"
+            }
+        ]
+    }
+]
