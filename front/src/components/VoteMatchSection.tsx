@@ -1,4 +1,4 @@
-import "./FirstVoteMatchSection.css";
+import "./VoteMatchSection.css";
 import type { Participant } from "../types/participant";
 
 interface MatchResult {
@@ -6,15 +6,16 @@ interface MatchResult {
   female: Participant;
 }
 
-interface FirstVoteMatchSectionProps {
+interface VoteMatchSectionProps {
   matches: MatchResult[];
+  title: string;
 }
 
-export function FirstVoteMatchSection({ matches }: FirstVoteMatchSectionProps) {
+export function VoteMatchSection({ matches, title }: VoteMatchSectionProps) {
   return (
     <section className="first-vote-match-section">
       <h2 className="match-section-title">
-        첫인상 매칭 결과 ({matches.length}쌍)
+        {title} 매칭 결과 ({matches.length}쌍)
       </h2>
 
       <div className="match-list">
