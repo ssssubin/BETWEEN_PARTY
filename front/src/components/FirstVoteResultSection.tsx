@@ -75,6 +75,8 @@ function FirstVoteResultColumn({
       {/* 검색 영역 */}
       <div className="first-vote-result-header">
         <div className="first-vote-result-search">
+          <span className="search-icon">⌕</span>
+
           <input
             type="text"
             value={searchKeyword}
