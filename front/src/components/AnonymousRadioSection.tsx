@@ -57,7 +57,7 @@ export function AnonymousRadioSection({
     <section className="anonymous-radio-section">
       {/* Select Box */}
       <div className="radio-filter">
-        {/* 받는 사람 */}
+        {/* 받은 사람 */}
         <select
           className="radio-participant-select"
           value={selectedToId ?? ""}
@@ -65,7 +65,7 @@ export function AnonymousRadioSection({
             setSelectedToId(e.target.value ? Number(e.target.value) : null)
           }
         >
-          <option value="">받는 사람</option>
+          <option value="">받은 사람</option>
 
           {receivedParticipants.map((participant) => (
             <option key={participant.id} value={participant.id}>
